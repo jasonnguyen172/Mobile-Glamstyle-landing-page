@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="45" viewBox="0 0 40 45">
+    <defs>
+        <path id="b" d="M16 37c1.408-2.77 2.45-4.223 3.122-4.36a15.54 15.54 0 0 0 3.002-.936 16.002 16.002 0 0 0 5.19-3.576C30.209 25.146 32 21.027 32 16.477 32 7.377 24.837 0 16 0S0 7.377 0 16.477c0 4.55 1.79 8.67 4.686 11.65a16.002 16.002 0 0 0 5.19 3.577 15.54 15.54 0 0 0 3.002.936c.673.137 1.714 1.59 3.122 4.36z"/>
+        <filter id="a" width="143.8%" height="137.8%" x="-21.9%" y="-13.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.115206069 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="nonzero">
+        <g transform="translate(4 2)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#1C0920" xlink:href="#b"/>
+        </g>
+        <path fill="#FFF" d="M19.17 27.784c-3.891-5.781-5.837-9.82-5.837-12.117a6.667 6.667 0 1 1 13.334 0c0 2.296-1.946 6.336-5.837 12.117a1 1 0 0 1-1.66 0zM20 19a3.333 3.333 0 1 0 0-6.667A3.333 3.333 0 0 0 20 19z"/>
+    </g>
+</svg>

@@ -1,0 +1,639 @@
+
+<div class="landing-page">
+  <div class="space-for-navigation-bar">
+  </div>
+  <nav class="row navbar navigation-bar">
+    <div class="menu-btn">
+      <button mat-icon-button (click)="toggleMenu()">
+        <mat-icon>{{menuIcon}}</mat-icon>
+      </button>
+    </div>
+    <div class="navbar-brand">
+      <a class="" href="#">
+        <img class="logo" src="assets/icon/logo-black.svg">
+      </a>
+    </div>
+    <div class="navigation-bar--right"></div>
+  </nav>
+
+  <aside class="side-menu__container" (click)="toggleMenu()" [ngClass]="{'side-menu__container-active': showMenu}">
+    <nav class="slide-menu" [ngClass]="{'slide-menu-active': showMenu}" (click)="$event.stopImmediatePropagation()">
+
+      <div class="menu-header">
+        <button (click)="login()">ĐĂNG NHẬP</button>
+        <button (click)="fromSlideMenuToID('sign-up-form')">ĐĂNG KÝ</button>
+      </div>
+      <div class="menu-body">
+        <div class="menu-body-item" (click)="fromSlideMenuToID('featureList')">
+          <span>TÍNH NĂNG</span>
+        </div>
+        <div class="menu-body-item-collapse" (click)="discoverIsCollapsed = !discoverIsCollapsed">
+          <span> KHÁM PHÁ </span>
+          <mat-icon [@iconChange]="discoverIsCollapsed">keyboard_arrow_down</mat-icon>
+        </div>
+        <div class="menu-body-collapse-content" [@collapseChange]="discoverIsCollapsed">
+          <div (click)="moveToLink('https://news.glamstyle.vn/')">
+            <span>Bí quyết làm đẹp</span>
+          </div>
+          <div (click)="moveToLink('https://www.youtube.com/channel/UCU8hUw8H9rWLs8wh9O6-3gQ')">
+            <span>Videos</span>
+          </div>
+        </div>
+        <div class="menu-body-item-collapse" (click)="partnerIsCollapsed = !partnerIsCollapsed">
+          <span> ĐỐI TÁC </span>
+          <mat-icon [@iconChange]="partnerIsCollapsed">keyboard_arrow_down</mat-icon>
+        </div>
+        <div class="menu-body-collapse-content" [@collapseChange]="partnerIsCollapsed">
+
+          <div (click)="moveToLink('https://business.glamstyle.vn')">
+            <span>Bí quyết kinh doanh</span>
+          </div>
+          <div (click)="moveToLink('https://glamstyle.zendesk.com/hc/vi')">
+            <span>Hỗ trợ đối tác</span>
+          </div>
+        </div>
+        <div class="menu-body-item-collapse" (click)="companyIsCollapsed = !companyIsCollapsed">
+          <span> CÔNG TY </span>
+          <mat-icon [@iconChange]="companyIsCollapsed">keyboard_arrow_down</mat-icon>
+        </div>
+        <div class="menu-body-collapse-content" [@collapseChange]="companyIsCollapsed">
+          <div>
+            <span>Về chúng tôi</span>
+          </div>
+          <div (click)="moveToLink('https://glamstyle.vn/terms')">
+            <span>Điều khoản sử dụng</span>
+          </div>
+          <div (click)="moveToLink('https://glamstyle.vn/policy')">
+            <span>Chính sách bảo mật</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-footer">
+      </div>
+    </nav>
+  </aside>
+
+  <div class="part-1">
+    <div class="part-1--img">
+      <img src="assets/business/biz-background.png" alt="part-1 img" />
+      <!-- <div class="part-1--wave-footer"> -->
+
+      <!-- </div> -->
+    </div>
+    <svg class="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 5460 25" style="enable-background:new 0 0 5460 25;" xml:space="preserve">
+      <path
+        d="M5460,25V10c-19.3,0-204.8-4-341.3-4s-204.8,4-341.3,4S4572.8,0,4436.3,0S4231.5,4,4095,4s-204.8,2-341.3,2 S3549,2,3412.5,2s-204.8,8-341.3,8S2866.5,4,2730,4s-204.8,8-341.3,8S2184,0,2047.5,0s-204.8,8-341.3,8S1501.5,4,1365,4 s-204.8,8-341.3,8S819,0,682.5,0S477.8,12,341.3,12S136.5,10,0,10c0,0.2,0,5.5,0,15H5460z">
+      </path>
+    </svg>
+  </div>
+
+  <div class="part-2">
+    <div class="part-2--slogan">
+      <span class="title">Nền tảng trao quyền cho các Stylist và Artist</span>
+    </div>
+    <div class="part-2--content">
+      <span>
+        Thể hiện tài năng làm đẹp không giới hạn của bạn giúp người dùng có nhiều sự lựa chọn hơn để
+        trải nghiệm
+        những điều mới mẻ.
+      </span>
+    </div>
+    <div class="part-2--sign-in-btn" (click)="gotoSign()">
+      <button>ĐĂNG KÝ VỚI GLAMSTYLE</button>
+    </div>
+  </div>
+
+  <div class="part-3">
+    <span class="part-3--title">Tại sao chọn GlamStyle?</span>
+    <div class="part-3--content">
+      <span>
+        Trong thời đại công nghệ 4.0 nhiệm vụ của chúng tôi là giúp các Chuyên Gia Tự Do trong lĩnh vực làm đẹp
+        biến
+        niềm đam mê của họ thành một doanh nghiệp thành công
+      </span>
+    </div>
+
+    <div class="part-3--bottom">
+      <div class="part-3--bottom--row">
+        <div class="part-3--bottom--row--left">
+          <img src="assets/business/01.svg">
+          <div>
+            <span>
+              MỞ CỬA TIỆM<br>TRỰC TUYẾN
+            </span>
+          </div>
+        </div>
+        <div class="part-3--bottom--row--right">
+          <img src="assets/business/02.svg">
+          <div>
+            <span>
+              QUẢN LÝ<br>TINH GỌN
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="part-3--bottom--row">
+        <div class="part-3--bottom--row--left">
+          <img src="assets/business/03.svg">
+          <div>
+            <span>
+              NHẬN KHÁCH<br>HÀNG MỚI
+            </span>
+          </div>
+        </div>
+        <div class="part-3--bottom--row--right">
+          <img src="assets/business/04.svg">
+          <div>
+            <span>
+              TĂNG TRƯỞNG<br>DOANH THU
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="part-4" id="featureList">
+    <div class="part-4--title">
+      <span>Bạn muốn phát triển kinh doanh online của bạn như thế nào?</span>
+    </div>
+    <div class="part-4-item" (click)="gotoFeatureID('increaseReputation')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-1.svg'>
+      </div>
+      <div>
+        <span>Tăng cường danh tiếng trực tuyến</span>
+      </div>
+    </div>
+
+    <div class="part-4-item" (click)="gotoFeatureID('digitalNoteBook')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-2.svg'>
+      </div>
+      <div>
+        <span>Sổ tay điện tử</span>
+      </div>
+    </div>
+
+    <div class="part-4-item" (click)="gotoFeatureID('selfService')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-3.svg'>
+      </div>
+      <div>
+        <span>Khách hàng tự phục vụ 24/7</span>
+      </div>
+    </div>
+
+    <div class="part-4-item" (click)="gotoFeatureID('bookingNow')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-4.svg'>
+      </div>
+      <div>
+        <span>Tăng chuyển đổi khách hàng mới</span>
+      </div>
+    </div>
+
+    <div class="part-4-item" (click)="gotoFeatureID('customerService')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-5.svg'>
+      </div>
+      <div>
+        <span>Giữ chân và tăng
+          khách hàng trung thành</span>
+      </div>
+    </div>
+
+    <div class="part-4-item" (click)="gotoFeatureID('importantNotice')">
+      <div class="part-4--icon">
+        <img src='assets/business/ic-6.svg'>
+      </div>
+      <div>
+        <span>Nhanh chóng phát hiện mọi thay đổi</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="part-5">
+    <div class="part-5--item" id="increaseReputation">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/frame-mobile.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>TĂNG CƯỜNG DANH TIẾNG TRỰC TUYẾN</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Thương hiệu cá nhân</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Hãy thể hiện rõ phong cách của bạn để tạo nên thương hiệu khác biệt. Tận dụng lợi thế website GlamStyle được
+            cá nhân hoá từ việc xây dựng hình ảnh chuyên nghiệp đến những nhận xét, cảm nhận của từng khách hàng. Đây là
+            một trang web có thể tùy chỉnh, cho phép khách hàng tìm kiếm bạn 24/7, thậm chí không cần truy cập vào
+            GlamStyle. Bạn cũng đừng lo lắng về tiện ích đặt chỗ trực tuyến (Booking Online), vì tính năng này đã được
+            tích hợp tự động trong trang web cá nhân của bạn.
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-5--item" id="digitalNoteBook">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/calendar.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>SỔ TAY ĐIỆN TỬ QUẢN LÝ LỊCH LÀM VIỆC <br> TẤT CẢ TRONG MỘT</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Truy cập nhật ký dễ dàng</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Dù bạn đi đâu hay đang làm gì thì việc quản lý nhật ký làm việc của salon luôn đơn giản và dễ dàng. Bạn có
+            thể nắm bắt lịch làm việc trong ngày, toàn bộ thông tin và lịch sử đặt hẹn của khách hàng, hiệu suất kinh
+            doanh, v.v… chỉ với một vài cú chạm trên chiếc smartphone của bạn
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="part-5--item" id="selfService">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/booking-online.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>KHÁCH HÀNG TỰ PHỤC VỤ 24/7</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Booking Online 24/7</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Bạn không thể mở cửa hàng 24/7 để nhận tất cả lịch hẹn, nhưng GlamStyle sẽ giúp bạn. Chúng tôi cung cấp các
+            công cụ để tiếp cận với khách hàng, cho phép họ tham quan cửa tiệm online của bạn, xem các dịch vụ, đọc nhận
+            xét của các khách hàng sử dụng trước đó, đồng bộ hoá lịch làm việc của bạn. Vì thế, khách hàng có thể nhìn
+            thấy các khung giờ trống và có thể tự đặt hẹn 24/7 mà không cần phải gọi điện thoại trực tiếp cho bạn
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-5--item" id="bookingNow">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/booking-now.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>TĂNG CHUYỂN ĐỔI KHÁCH HÀNG MỚI</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Tiện ích <b>“Đặt ngay!”</b> <br>
+            trên tài khoản mạng xã hội</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Cho phép bất kỳ khách hàng nào đang lướt qua bài đăng của bạn trên Web, Facebook hoặc Instagram có thể click
+            <b>“Đặt ngay”</b> mà không cần rời khỏi trang, biến tài khoản của bạn thành cửa tiệm ngay lập tức. Đó là một
+            cách
+            để người dùng có thể chuyển từ người lướt web, lướt mạng xã hội trở thành khách hàng ngay lập tức mà không
+            cần phải gọi cho tiệm của bạn vào giờ làm việc
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="part-5--item" id="customerService">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/customer-service.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>GIỮ CHÂN VÀ TĂNG KHÁCH HÀNG TRUNG THÀNH</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Quản lý và <br>
+            chăm sóc khách hàng</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Mỗi cuộc hẹn được cá nhân hóa để theo dõi lịch sử khách hàng, số lượng cuộc hẹn, ngày sinh nhật, ghi chú
+            riêng tư, liệu trình làm đẹp, cũng như sở thích hay thói quen đặc biệt của khách hàng, giúp bạn giữ chân
+            khách hàng và tăng tần suất quay trở lại của khách hàng đó
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-5--item" id="importantNotice">
+      <div class="part-5--img">
+        <div class="part-5--mobile-img">
+          <img src="assets/business/important-notice.png" alt="">
+        </div>
+      </div>
+      <div class="part-5--content">
+        <div class="part-5--title1">
+          <span>NHANH CHÓNG PHÁT HIỆN MỌI THAY ĐỔI</span>
+        </div>
+        <div class="part-5--title2">
+          <span>Thông báo quan trọng</span>
+        </div>
+        <div class="part-5--text">
+          <span>
+            Ứng dụng GlamStyle sẽ tự động gửi cho bạn những thông báo để cập nhật tình hình kinh doanh như: có lịch đặt
+            chỗ mới, khách hàng thay đổi lịch hẹn, nhận xét mới từ khách hàng... bằng công cụ thông báo từ ứng dụng,
+            email và tin nhắn SMS trên di động. Giúp bạn tiết kiệm thời gian để tập trung sáng tạo nhiều kiểu tóc mới và
+            xử lý những việc quan trọng của doanh nghiệp mình
+          </span>
+        </div>
+        <div class="part-5--sign-in-btn" (click)="gotoSign()">
+          <button>ĐĂNG KÝ NGAY</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="part-6">
+    <div class="part-6--title">
+      <span>
+        Nhận xét của chủ Salon về GlamStyle
+      </span>
+    </div>
+
+    <div class="part-6--feedback-show">
+      <mat-carousel #carousel [autoplay]="false" interval="6000" color="#002984" maxWidth="auto" proportion="90"
+        slides="4" [loop]="true" [hideArrows]="true" [hideIndicators]="false" [useKeyboard]="true"
+        [useMouseWheel]="false" orientation="ltr" [svgIconOverrides]="arowsIcon">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let item of feedbackList,let i = index" id="{{i}}"
+          overlayColor="#00000040" [hideOverlay]="true">
+
+          <div class="part-6--feedbacks">
+            <div class="part-6--info">
+              <div class="part-6--ava">
+                <img src="{{item.avatar}}" alt="avatar">
+              </div>
+              <div class="part-6--user-name">
+                <span>{{item.userName}}</span>
+                <span class="part-6--barber-name">{{item.barberName}}</span>
+              </div>
+            </div>
+            <div class="part-6--content">
+              <span>
+                {{item.content}}
+              </span>
+            </div>
+          </div>
+
+        </mat-carousel-slide>
+      </mat-carousel>
+
+    </div>
+
+
+
+
+  </div>
+
+  <div class="part-7">
+    <div class="part-7--title">
+      <span>
+        GlamStyle dùng được <br> trên mọi thiết bị
+      </span>
+    </div>
+
+    <div class="part-7--banner">
+
+      <mat-carousel #carousel timings="350ms ease-in" [autoplay]="true" interval="6000" color="#002984" maxWidth="auto"
+        proportion="100" slides="3" [loop]="true" [hideArrows]="false" [hideIndicators]="true" [useKeyboard]="true"
+        [useMouseWheel]="false" orientation="ltr" [svgIconOverrides]="arowsIcon">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let device of deviceList,let i = index" id="{{i}}"
+          overlayColor="#00000040" [hideOverlay]="true">
+          <div>
+            <img src="{{device}}" alt="device img">
+          </div>
+        </mat-carousel-slide>
+      </mat-carousel>
+
+    </div>
+
+    <div class="part-7--video">
+      <iframe width="100%" height="350" src="https://www.youtube.com/embed/B9P11-8q5VI" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="part-8" id="sign-up-form">
+    <div class="part-8--title">
+      <span>
+        Trở thành đối tác trực tuyến với GlamStyle
+      </span>
+    </div>
+    <div class="part-8--content">
+      <span>
+        Điền thông tin chi tiết của bạn ở đây và chúng tôi sẽ liên lạc với bạn để tư vấn miễn phí. Tìm hiểu GlamStyle
+        làm cách nào để mang lại cho bạn nhiều khách hàng hơn, việc quản lý trực tuyến của bạn dễ dàng hơn.
+      </span>
+    </div>
+    <div class="part-8--sign-up-form">
+      <div class="part-8--fill-area">
+        <div class="part-8--fill-area--title">
+          <span>
+            VỀ ĐỊA ĐIỂM
+          </span>
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>TÊN DOANH NGHIỆP</span>
+          <input type="text" placeholder="Nhập tên doanh nghiệp" [(ngModel)]="bizName">
+        </div>
+
+        <div class="part-8--fill-area--collapse-box">
+          <span>LOẠI HÌNH KINH DOANH</span>
+          <div class="dropdown" [matMenuTriggerFor]="businessTypeMenu" (click)="fixDisappearIOSBug()">
+            <input placeholder="Chọn loại hình kinh doanh" [(ngModel)]="businessType">
+            <img src="assets/business/ic-down-gray.svg">
+          </div>
+          <mat-menu #businessTypeMenu="matMenu">
+            <span mat-menu-item *ngFor="let item of categorys" (click)="chooseService(item.name)">{{item.name}}</span>
+          </mat-menu>
+        </div>
+
+        <div class="part-8--fill-area--collapse-box">
+          <span>NHÂN VIÊN</span>
+          <div class="dropdown" [matMenuTriggerFor]="employeeNumberMenu">
+            <input placeholder="Số lượng nhân viên" [(ngModel)]="employeeNumber">
+            <img src="assets/business/ic-down-gray.svg">
+          </div>
+          <mat-menu #employeeNumberMenu="matMenu">
+            <span mat-menu-item *ngFor="let item of numberEmployee" (click)="chooseNumber(item)">{{item}}</span>
+          </mat-menu>
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>SỐ NHÀ, ĐƯỜNG, PHƯỜNG</span>
+          <input placeholder="Nhập địa chỉ" [(ngModel)]="street">
+        </div>
+
+        <div class="part-8--fill-area--collapse-box">
+          <span>THÀNH PHỐ</span>
+          <div class="dropdown" [matMenuTriggerFor]="cityMenu">
+            <input placeholder="Chọn thành phố" [(ngModel)]="province">
+            <img src="assets/business/ic-down-gray.svg">
+          </div>
+          <mat-menu #cityMenu="matMenu">
+            <span mat-menu-item *ngFor="let item of locations" (click)="chosseCity(item.city)">{{item.city}}</span>
+          </mat-menu>
+        </div>
+
+        <div class="part-8--fill-area--collapse-box">
+          <span>QUẬN</span>
+          <div class="dropdown" [matMenuTriggerFor]="provinceMenu">
+            <input placeholder="Chọn quận" [(ngModel)]="district">
+            <img src="assets/business/ic-down-gray.svg">
+          </div>
+          <mat-menu #provinceMenu="matMenu">
+            <span mat-menu-item *ngFor="let item of districsts" (click)="chooseDistrict(item)">{{item}}</span>
+          </mat-menu>
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>WEBSITE/ FACEBOOK</span>
+          <input placeholder="Nhập địa chỉ website/ facebook" [(ngModel)]="socailLink">
+        </div>
+
+        <div class="part-8--fill-area--title">
+          <span>
+            VỀ BẠN
+          </span>
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>HỌ & TÊN</span>
+          <input placeholder="Nhập họ & tên" [(ngModel)]="lastName">
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>EMAIL</span>
+
+          <input placeholder="Nhập địa chỉ email" [(ngModel)]="email">
+        </div>
+
+        <div class="part-8--fill-area--filling-box">
+          <span>SỐ ĐIỆN THOẠI</span>
+
+          <input placeholder="Nhập số điện thoại" [(ngModel)]="phone">
+        </div>
+        <div class="part-8--fill-area--collapse-box">
+          <span>BẠN BIẾT GLAMSTYLE TỪ ĐÂU?</span>
+          <div class="dropdown" [matMenuTriggerFor]="infoMenu">
+            <input placeholder="Chọn câu trả lời" [(ngModel)]="src">
+            <img src="assets/business/ic-down-gray.svg">
+          </div>
+          <mat-menu #infoMenu="matMenu">
+            <span mat-menu-item *ngFor="let item of srcKnow" (click)="chooseSource(item)">{{item}}</span>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isError" class="part-8--error-content">
+      <span>
+        {{errorMessage}}
+      </span>
+    </div>
+  </div>
+  <div class="part-9">
+    <div class="part-9--notice">
+      <span>
+        GlamStyle sẽ sử dụng các chi tiết bạn nhập vào đây để liên lạc với bạn qua email/ điện thoại về việc trở
+        thành đối tác của chúng tôi.
+      </span>
+      <br>
+      <span>
+        Bạn có thể tìm hiểu thêm về cách lưu trữ, sử dụng và bảo vệ thông tin của bạn trong
+        <u (click)="moveToLink('https://glamstyle.vn/policy')">Chính Sách Bảo Mật</u>
+        của chúng tôi.
+      </span>
+    </div>
+    <div class="part-9--sign-in-btn" (click)="signUp()">
+      <button>
+        HOÀN TẤT ĐĂNG KÝ
+      </button>
+    </div>
+  </div>
+
+  <div class="landing-page--footer">
+    <div class="landing-page--footer--contact">
+      <div class="landing-page--footer--left">
+        <div class="landing-page--footer--title">
+          <span>
+            LIÊN HỆ
+          </span>
+        </div>
+        <div class="landing-page--footer--content">
+          <p (click)="moveToLink('https://glamstyle.zendesk.com/hc/vi')">Hỗ trợ và hướng dẫn</p>
+          <p>Liên hệ với chúng tôi</p>
+        </div>
+      </div>
+
+      <div class="landing-page--footer--right">
+
+        <img src="assets/business/app_store.png" alt="app store icon">
+
+
+        <img src="assets/business/google_play.png" alt="google play icon">
+
+      </div>
+    </div>
+
+    <div class="landing-page--footer--link">
+      <div class="landing-page--footer--link--left">
+        <img src="assets/business/facebook-icon.svg" alt="copyright img">
+        <img src="assets/business/camera-icon.svg" alt="camera img">
+        <img src="assets/business/youtube-icon.svg" alt="youtube img">
+
+        <span> &#169; 2019 glamstyle.vn</span>
+
+      </div>
+      <div class="landing-page--footer--link--right">
+        <img src="assets/business/dadangky.png" alt="signed img">
+      </div>
+    </div>
+  </div>
+  <!-- this is the end div of landing page  -->
+  </div>
+
+<!-- <ng-template #completedSignUp let-modal>
+    <app-sign-up-completed-modal></app-sign-up-completed-modal>
+  </ng-template> -->
